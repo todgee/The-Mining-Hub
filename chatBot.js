@@ -49,3 +49,25 @@ function typeWriterEffect(text, chatBox) {
 
     typeNextChar();
 }
+
+function navigateTo(page) {
+    switch (page) {
+        case 'home':
+            alert("Navigating to Home Page"); // Placeholder - Implement your logic here
+            break;
+        case 'settings':
+            alert("Navigating to Settings Page"); // Placeholder - Implement your logic here
+            break;
+        case 'profile':
+            alert("Navigating to Profile Page"); // Placeholder - Implement your logic here
+            break;
+        default:
+            alert("Unknown page");
+    }
+}
+
+function handleInput(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+}
