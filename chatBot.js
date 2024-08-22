@@ -50,24 +50,23 @@ function typeWriterEffect(text, chatBox) {
     typeNextChar();
 }
 
-function navigateTo(page) {
-    switch (page) {
-        case 'home':
-            alert("Navigating to Home Page"); // Placeholder - Implement your logic here
-            break;
-        case 'settings':
-            alert("Navigating to Settings Page"); // Placeholder - Implement your logic here
-            break;
-        case 'profile':
-            alert("Navigating to Profile Page"); // Placeholder - Implement your logic here
-            break;
-        default:
-            alert("Unknown page");
-    }
-}
-
 function handleInput(event) {
     if (event.key === "Enter") {
         sendMessage();
     }
 }
+
+window.onload = function() {
+    // Display the initial message from Buddy
+    const chatBox = document.getElementById("chat-box");
+    const botMessage = "Hi, my name is Buddy! How can I help you today?";
+    
+    // Create the bot message element
+    const botMessageElement = document.createElement("div");
+    botMessageElement.className = "message bot-message";
+    botMessageElement.innerText = botMessage;
+    
+    // Add the message to the chat box
+    typeWriterEffect(botMessage, chatBox);
+    chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom if necessary
+};

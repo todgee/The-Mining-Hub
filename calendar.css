@@ -1,0 +1,115 @@
+/* General body styling with background image */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('/images/background.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Chat container styling for a mobile look */
+.calendar-container {
+    width: 375px;
+    max-width: 100%;
+    height: 667px;
+    background-color: #e19a17; /* White background with slight transparency */
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Calendar box styling */
+.calendar-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background:  rgba(255, 255, 255, 0.9);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Bottom navigation bar */
+.bottom-nav {
+    display: flex;
+    justify-content: center; /* Center the entire button group */
+    align-items: center;
+    padding: 10px;
+    background-color: #e19a17;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    border-radius: 0 0 20px 20px;
+    max-width: 100%;
+}
+
+/* Navigation button container to ensure buttons are centered */
+.nav-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%; /* Adjust to control the width of the button group */
+}
+
+/* Navigation button styles */
+.nav-button {
+    flex: 1;
+    padding: 10px 0;
+    background-color: #e19a17;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #fa6400;
+}
+
+.nav-button:focus {
+    outline: none;
+}
+
+.nav-button:focus {
+    outline: none;
+}
+
+/* Specific styling for active button (optional) */
+.nav-button.active {
+    background-color: #ff5722;
+}
+
+/* Calendar display area styling */
+#calendar {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional custom styles for the calendar library */
+.fc {
+    font-family: Arial, sans-serif;
+}

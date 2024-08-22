@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule - Buddy</title>
+    <link rel="stylesheet" href="calendar.css" />
+    <script src="calendar.js"></script>
+    <script src="navigation.js"></script>
+  </head>
+  <body>
+    <!-- Calendar Page Container -->
+    <div class="calendar-container">
+      <!-- Calendar Chat Container -->
+      <div class="calendar-box" id="calendar-box">
+        <div id="calendar"></div>
+        <!-- Placeholder for the calendar library -->
+      </div>
+
+      <!-- Bottom Navigation Bar -->
+      <div class="bottom-nav">
+        <div class="nav-buttons-container">
+          <button class="nav-button" onclick="navigateTo('home')">Home</button>
+          <button class="nav-button" onclick="navigateTo('chat')">Chat</button>
+          <button class="nav-button active" onclick="navigateTo('schedule')">
+            Schedule
+          </button>
+          <!-- Active schedule button -->
+          <button class="nav-button" onclick="navigateTo('settings')">
+            Settings
+          </button>
+          <button class="nav-button" onclick="navigateTo('profile')">
+            Profile
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include the calendar library's JavaScript (if applicable) -->
+    <script src="path/to/calendar-library.js"></script>
+    <script src="calendar.js"></script>
+    <!-- Your custom JavaScript for calendar logic -->
+  </body>
+</html>
