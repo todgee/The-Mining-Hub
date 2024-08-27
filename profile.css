@@ -59,15 +59,92 @@ body {
     object-fit: cover; /* Ensures the image covers the container */
     border-radius: 50%; /* Ensure the image is circular */
 }
+
+/* Profile info container styling */
 .profile-info p {
-    font-size: 16px;
-    color: #333;
-    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .profile-info p strong {
+    width: 100px; /* Ensure consistent label width */
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 10px;
     color: #ff5722;
 }
+
+.profile-info input {
+    flex-grow: 1;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Edit Profile Button Styling */
+.edit-profile-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.edit-profile-button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Space between the icon and text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-profile-button i {
+    font-size: 18px;
+}
+
+.edit-profile-button:hover {
+    background-color: #fa6400;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Save Profile Button Styling */
+.save-profile-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.save-profile-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.save-profile-button i {
+    font-size: 18px;
+}
+
+.save-profile-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Bottom navigation bar */
 .bottom-nav {
