@@ -7,15 +7,15 @@ body {
     height: 100vh;
     margin: 0;
     background-image: url('/images/background.jpg'); /* Path to your image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    overflow-x: hidden;
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
-/* Chat container styling */
-.chat-container {
+/* Profile container styling for a mobile look */
+.profile-container {
     width: 375px;
     max-width: 100%;
     height: 667px;
@@ -30,73 +30,43 @@ body {
     z-index: 1; /* Ensure it stays above the overlay */
 }
 
-/* Chat box styling */
-.chat-box {
+/* Profile details box styling */
+.profile-box {
     flex-grow: 1;
-    overflow-y: auto;
+    text-align: center;
     padding: 20px;
-    margin-bottom: 15px;
+    background-color: #fff;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.9);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
 }
 
-/* Input wrapper for input field and send button */
-.input-wrapper {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 60px; /* Space for navigation bar */
-}
-
-/* Container holding the input and button */
-.input-container {
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px auto; /* Center the image container */
+    border-radius: 50%; /* Ensure the container is circular */
+    border: 3px solid #ff5722;
+    overflow: hidden; /* Hide any overflow */
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.profile-picture img {
     width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    border-radius: 50%; /* Ensure the image is circular */
 }
-
-/* Chat input styling */
-.chat-input {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    border-radius: 30px 0 0 30px;
+.profile-info p {
     font-size: 16px;
-    outline: none;
+    color: #333;
+    margin: 8px 0;
 }
 
-/* Send button with icon */
-.send-icon-button {
-    background-color: #ff5722;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 0 30px 30px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-    height: 100%; /* Ensure the button fully matches the height of the input field */
-}
-
-/* Ensuring the icon fits well */
-.send-icon-button img {
-    width: 24px;
-    height: 24px;
-}
-
-.send-icon-button:hover {
-    background-color: #fa6400;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05); /* Subtle scale on hover */
+.profile-info p strong {
+    color: #ff5722;
 }
 
 /* Bottom navigation bar */
@@ -157,31 +127,4 @@ body {
     background-color: #fa6400;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transform: scale(1.05); /* Subtle scale on hover */
-}
-
-
-
-/* Message bubble styling */
-.message {
-    max-width: 80%;
-    padding: 10px;
-    border-radius: 15px;
-    margin: 5px 0;
-    word-wrap: break-word;
-}
-
-/* User message bubble */
-.user-message {
-    align-self: flex-end;
-    background-color: #007bff;
-    color: #ffffff;
-    border-bottom-right-radius: 0;
-}
-
-/* Bot message bubble */
-.bot-message {
-    align-self: flex-start;
-    background-color: #ff5722;
-    color: #ffffff;
-    border-bottom-left-radius: 0;
 }

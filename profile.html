@@ -3,20 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Schedule - Buddy</title>
-    <link rel="stylesheet" href="calendar.css" />
+    <title>Profile - Buddy</title>
+    <link rel="stylesheet" href="profile.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="calendar.js"></script>
     <script src="navigation.js"></script>
   </head>
   <body>
-    <!-- Calendar Page Container -->
-    <div class="calendar-container">
-      <!-- Calendar Chat Container -->
-      <div class="calendar-box" id="calendar-box">
-        <div id="calendar"></div>
-        <!-- Placeholder for the calendar library -->
+    <!-- Profile Page Container -->
+    <div class="profile-container">
+      <!-- Profile Details Section -->
+      <div class="profile-box">
+        <h2>Matteo's Profile</h2>
+        <div class="profile-picture">
+          <!-- Placeholder for profile image -->
+          <img src="/images/profilePic.png" alt="Profile Picture" />
+        </div>
+        <div class="profile-info">
+          <p><strong>Name:</strong> Matteo Fraca</p>
+          <p><strong>Email:</strong> matteofrasca22@gmail.com</p>
+          <p><strong>Role:</strong> Project Manager</p>
+        </div>
       </div>
 
       <nav class="bottom-nav">
@@ -24,7 +31,7 @@
           <button class="nav-button" onclick="navigateTo('home')">
             <i class="fa fa-fw fa-home"></i>
           </button>
-          <button class="nav-button active" onclick="navigateTo('chat')">
+          <button class="nav-button" onclick="navigateTo('chat')">
             <i class="fa fa-fw fa-comments"></i>
           </button>
           <button class="nav-button" onclick="navigateTo('schedule')">
@@ -33,15 +40,11 @@
           <button class="nav-button" onclick="navigateTo('settings')">
             <i class="fa fa-fw fa-cog"></i>
           </button>
-          <button class="nav-button" onclick="navigateTo('profile')">
+          <button class="nav-button active" onclick="navigateTo('profile')">
             <i class="fa fa-fw fa-user"></i>
           </button>
         </div>
       </nav>
-
-    <!-- Include the calendar library's JavaScript (if applicable) -->
-    <script src="path/to/calendar-library.js"></script>
-    <script src="calendar.js"></script>
-    <!-- Your custom JavaScript for calendar logic -->
+    </div>
   </body>
 </html>

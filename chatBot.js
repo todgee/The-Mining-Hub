@@ -19,7 +19,10 @@ async function sendMessage() {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: userMessage }],
+            messages: [
+                { role: "system", content: "You are an assistant specialized in improving productivity for copper and gold mining operations in South Australia." },
+                { role: "user", content: userMessage }
+            ],
             max_tokens: 150
         })
     });
@@ -38,17 +41,23 @@ function typeWriterEffect(text, chatBox) {
     botMessageDiv.className = "message bot-message";
     chatBox.appendChild(botMessageDiv);
 
+    // Calculate dynamic timeout based on message length
+    const baseTimeout = 20; // The base typing speed (in milliseconds)
+    const scaleFactor = 100; // You can adjust this to make the speed scaling more/less sensitive
+    const dynamicTimeout = Math.max(10, baseTimeout / (text.length / scaleFactor)); // Ensure a minimum timeout value
+
     function typeNextChar() {
         if (i < text.length) {
             botMessageDiv.innerHTML += text.charAt(i);
             i++;
             chatBox.scrollTop = chatBox.scrollHeight; // Keep scrolling as new characters are added
-            setTimeout(typeNextChar, 50); // Adjust the speed by changing the timeout (in milliseconds)
+            setTimeout(typeNextChar, dynamicTimeout); // Use the dynamically calculated timeout
         }
     }
 
     typeNextChar();
 }
+
 
 function handleInput(event) {
     if (event.key === "Enter") {

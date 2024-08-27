@@ -1,10 +1,10 @@
 function navigateTo(page) {
     switch(page) {
         case 'home':
-            window.location.href = 'ChatBot.html'; 
+            window.location.href = 'home.html'; 
             break;
         case 'chat':
-            window.location.href = 'chat.html'; 
+            window.location.href = 'Chatbot.html'; 
             break;
         case 'schedule':
             window.location.href = 'calendar.html'; 
