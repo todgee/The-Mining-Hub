@@ -20,7 +20,7 @@ async function sendMessage() {
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: "You are an assistant specialized in improving productivity for copper and gold mining operations in South Australia." },
+                { role: "system", content: "You are an assistant specialized in improving productivity for copper and gold mining operations in South Australia. take into account that your outputting straigh to HTML for formatting" },
                 { role: "user", content: userMessage }
             ],
             max_tokens: 150

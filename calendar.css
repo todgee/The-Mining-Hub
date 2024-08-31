@@ -30,18 +30,140 @@ body {
     z-index: 1; /* Ensure it stays above the overlay */
 }
 
-/* Calendar box styling */
-.calendar-box {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 10px;
+.event-creation-container {
+    padding: 15px;
     margin-bottom: 15px;
+    background-color: #fff;
     border-radius: 10px;
-    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-creation-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .event-creation-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .event-creation-container input,
+  .event-creation-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .event-creation-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .event-creation-container button:hover {
+    background-color: #fa6400;
+  }
+
+  .event-feed-container {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    max-height: 200px; /* Set a maximum height for the event feed */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .event-feed-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }  
+  
+  .event-feed-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .event-feed-container li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .event-feed-container li h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .event-feed-container li p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #555;
+  }
+
+/* Additional styling for the new layout */
+.event-feed-header {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
 }
+
+.event-feed-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#add-event-button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-event-button:hover {
+    background-color: #fa6400;
+}
+
+.event-creation-container {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hide the form */
+
+}
+
+.event-feed-container {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 500px; /* Adjusted height to fit the page better */
+    overflow-y: auto;
+}
+
 
 /* Bottom navigation bar */
 .bottom-nav {

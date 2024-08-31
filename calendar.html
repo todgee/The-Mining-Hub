@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Schedule - Buddy</title>
     <link rel="stylesheet" href="calendar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <script src="calendar.js"></script>
     <script src="navigation.js"></script>
-  </head>
-  <body>
-    <!-- Calendar Page Container -->
+</head>
+<body>
     <div class="calendar-container">
-      <!-- Calendar Chat Container -->
-      <div class="calendar-box" id="calendar-box">
-        <div id="calendar"></div>
-        <!-- Placeholder for the calendar library -->
-      </div>
-
-      <nav class="bottom-nav">
-        <div class="nav-buttons-container">
-          <button class="nav-button" onclick="navigateTo('home')">
-            <i class="fa fa-fw fa-home"></i>
-          </button>
-          <button class="nav-button active" onclick="navigateTo('chat')">
-            <i class="fa fa-fw fa-comments"></i>
-          </button>
-          <button class="nav-button" onclick="navigateTo('schedule')">
-            <i class="fa fa-fw fa-calendar"></i>
-          </button>
-          <button class="nav-button" onclick="navigateTo('settings')">
-            <i class="fa fa-fw fa-cog"></i>
-          </button>
-          <button class="nav-button" onclick="navigateTo('profile')">
-            <i class="fa fa-fw fa-user"></i>
-          </button>
+        <div class="event-feed-header">
+            <h2>Your Events</h2>
+            <button id="add-event-button">Add Event</button>
         </div>
-      </nav>
 
-    <!-- Include the calendar library's JavaScript (if applicable) -->
-    <script src="path/to/calendar-library.js"></script>
-    <script src="calendar.js"></script>
-    <!-- Your custom JavaScript for calendar logic -->
-  </body>
+        <div class="event-feed-container">
+            <ul id="event-feed">
+                <!-- Event items will be appended here -->
+            </ul>
+        </div>
+
+        <div class="event-creation-container" id="event-creation-container">
+            <h2>Create New Event</h2>
+            <form id="event-form">
+                <label for="event-name">Event Name:</label>
+                <input type="text" id="event-name" name="event-name" placeholder="Event Name" required>
+                
+                <label for="event-date">Date:</label>
+                <input type="date" id="event-date" name="event-date" required>
+                
+                <label for="event-time">Time:</label>
+                <input type="time" id="event-time" name="event-time" required>
+                
+                <label for="event-description">Description:</label>
+                <textarea id="event-description" name="event-description" placeholder="Write a brief description..." rows="3" required></textarea>
+                
+                <button type="submit">Add Event</button>
+            </form>
+        </div>
+
+        <nav class="bottom-nav">
+            <div class="nav-buttons-container">
+                <button class="nav-button" onclick="navigateTo('home')">
+                    <i class="fa fa-fw fa-home"></i>
+                </button>
+                <button class="nav-button active" onclick="navigateTo('chat')">
+                    <i class="fa fa-fw fa-comments"></i>
+                </button>
+                <button class="nav-button" onclick="navigateTo('schedule')">
+                    <i class="fa fa-fw fa-calendar"></i>
+                </button>
+                <button class="nav-button" onclick="navigateTo('settings')">
+                    <i class="fa fa-fw fa-cog"></i>
+                </button>
+                <button class="nav-button" onclick="navigateTo('profile')">
+                    <i class="fa fa-fw fa-user"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+</body>
 </html>
