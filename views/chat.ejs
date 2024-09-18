@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>ChatGPT Chatbot</title>
+    <!-- Load the Font Awesome icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/CSS/chatBot.CSS" />
+    <link rel="stylesheet" href="/CSS/navbar.css" />
+
+    <script src="/JS/chatBot.js"></script>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-box" id="chat-box">
+        <!-- Chat messages will be displayed here -->
+      </div>
+      <div class="input-wrapper">
+        <div class="input-container">
+          <input
+            type="text"
+            id="chat-input"
+            class="chat-input"
+            placeholder="Type your message here..."
+            onkeydown="handleInput(event)"
+          />
+          <button class="send-icon-button" onclick="sendMessage()">
+            <img src="/images/mail2.png" alt="Send" />
+          </button>
+        </div>
+      </div>
+      <%- include('partials/navbar') %>
+    </div>
+  </body>
+</html>

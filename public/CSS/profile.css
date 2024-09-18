@@ -1,0 +1,161 @@
+/* General body styling with background image */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('/images/background.jpg');
+    /* Path to your image */
+    background-size: cover;
+    /* Ensures the image covers the entire background */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-attachment: fixed;
+    /* Keeps the background fixed when scrolling */
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling */
+}
+
+/* Profile container styling for a mobile look */
+.profile-container {
+    width: 375px;
+    max-width: 100%;
+    height: 667px;
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Lighten background color */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    /* Ensure it stays above the overlay */
+}
+
+/* Profile details box styling */
+.profile-box {
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px auto;
+    /* Center the image container */
+    border-radius: 50%;
+    /* Ensure the container is circular */
+    border: 3px solid #ff5722;
+    overflow: hidden;
+    /* Hide any overflow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container */
+    border-radius: 50%;
+    /* Ensure the image is circular */
+}
+
+/* Profile info container styling */
+.profile-info p {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.profile-info p strong {
+    width: 100px;
+    /* Ensure consistent label width */
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #ff5722;
+}
+
+.profile-info input {
+    flex-grow: 1;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Edit Profile Button Styling */
+.edit-profile-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.edit-profile-button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between the icon and text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-profile-button i {
+    font-size: 18px;
+}
+
+.edit-profile-button:hover {
+    background-color: #fa6400;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Save Profile Button Styling */
+.save-profile-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.save-profile-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.save-profile-button i {
+    font-size: 18px;
+}
+
+.save-profile-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}

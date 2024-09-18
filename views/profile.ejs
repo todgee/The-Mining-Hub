@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Buddy</title>
+    <link rel="stylesheet" href="/CSS/profile.css" />
+    <link rel="stylesheet" href="/CSS/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/JS/profile.js"></script>
+  </head>
+  <body>
+    <!-- Profile Page Container -->
+    <div class="profile-container">
+      <!-- Profile Details Section -->
+      <div class="profile-box">
+        <h2>Matteo's Profile</h2>
+        <div class="profile-picture">
+          <!-- Placeholder for profile image -->
+          <img src="/images/profilePic.png" alt="Profile Picture" />
+        </div>
+        <div class="profile-info">
+          <p><strong>Name:</strong> Matteo Frasca</p>
+          <p><strong>Email:</strong> matteo@example.com</p>
+          <p><strong>Role:</strong> Project Manager</p>
+        </div>
+        <!-- Edit Profile Button -->
+        <div class="edit-profile-container">
+          <button class="edit-profile-button">
+            <i class="fa fa-pencil"></i> Edit Profile
+          </button>
+        </div>
+      </div>
+      <%- include('partials/navbar') %>
+    </div>
+  </body>
+</html>

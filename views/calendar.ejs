@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule - Buddy</title>
+    <link rel="stylesheet" href="/CSS/calendar.css" />
+    <link rel="stylesheet" href="/CSS/navbar.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="/JS/calendar.js"></script>
+  </head>
+  <body>
+    <div class="calendar-container">
+      <div class="event-feed-header">
+        <h2>Your Events</h2>
+        <button id="add-event-button">Add Event</button>
+      </div>
+
+      <div class="event-feed-container">
+        <ul id="event-feed">
+          <!-- Event items will be appended here -->
+        </ul>
+      </div>
+
+      <div class="event-creation-container" id="event-creation-container">
+        <h2>Create New Event</h2>
+        <form id="event-form">
+          <label for="event-name">Event Name:</label>
+          <input
+            type="text"
+            id="event-name"
+            name="event-name"
+            placeholder="Event Name"
+            required
+          />
+
+          <label for="event-date">Date:</label>
+          <input type="date" id="event-date" name="event-date" required />
+
+          <label for="event-time">Time:</label>
+          <input type="time" id="event-time" name="event-time" required />
+
+          <label for="event-description">Description:</label>
+          <textarea
+            id="event-description"
+            name="event-description"
+            placeholder="Write a brief description..."
+            rows="3"
+            required
+          ></textarea>
+
+          <button type="submit">Add Event</button>
+        </form>
+      </div>
+      <%- include('partials/navbar') %>
+    </div>
+  </body>
+</html>
