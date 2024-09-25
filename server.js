@@ -63,7 +63,9 @@ app.get('*', (req, res) => {
     res.status(404).send('Page not found');
 });
 
-// Start the server
-app.listen(port, () => {
+// Start the server and dynamically import the 'open' module
+app.listen(port, async () => {
     console.log(`Server running on port ${port}`);
+    const open = (await import('open')).default;  // Dynamically import 'open'
+    open(`http://localhost:${port}`);
 });
