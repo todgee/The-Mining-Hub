@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Chatbot</title>
+    <link rel="stylesheet" href="/CSS/settings.css" />
+    <link rel="stylesheet" href="/CSS/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/JS/profile.js"></script>
+  </head>
+  <body>
+    <!-- Settings Page Container -->
+    <div class="profile-container">
+      <!-- Settings Title -->
+      <div class="profile-box">
+        <h2>Chatbot Settings</h2>
+        
+        <!-- User Details -->
+        <div class="profile-info">
+          <p><strong>Username:</strong> <span id="username">Matteo Frasca</span></p>
+          <p><strong>Email:</strong> <span id="email">matteo@example.com</span></p>
+          <p><strong>Password:</strong> <input type="password" placeholder="Change Password" /></p>
+        </div>
+
+        <!-- Privacy Settings Section -->
+        <div class="profile-info">
+          <h3>Privacy Settings</h3>
+          <div>
+            <label for="twoFactorAuth">
+              <input type="checkbox" id="twoFactorAuth" />
+              Enable two-factor authentication
+            </label>
+          </div>
+          <div>
+            <label for="sessionTimeout">Session Timeout Duration:</label>
+            <select id="sessionTimeout">
+              <option value="5">5 minutes</option>
+              <option value="10">10 minutes</option>
+              <option value="15">15 minutes</option>
+              <option value="30">30 minutes</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Data Usage Policies -->
+        <div class="profile-info">
+          <h3>Data Usage Policies</h3>
+          <button id="reviewDataUsage">Review Data Usage</button>
+          <p>Compliance with relevant data protection regulations is assured.</p>
+        </div>
+
+        <!-- Data Access Control -->
+        <div class="profile-info">
+          <h3>Data Access Control</h3>
+          <p>Who can access my data:</p>
+          <select>
+            <option value="HR">HR</option>
+            <option value="Management">Management</option>
+            <option value="Only Me">Only Me</option>
+          </select>
+        </div>
+
+        <!-- Chat History Management -->
+        <div class="profile-info">
+          <h3>Chat History Management</h3>
+          <label>
+            <input type="checkbox" id="archiveChatHistory" />
+            Archive chat history for reference
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" id="clearChatHistory" />
+            Clear chat history permanently
+          </label>
+        </div>
+
+        <!-- Sensitive Data Handling -->
+        <div class="profile-info">
+          <h3>Sensitive Data Handling</h3>
+          <label>
+            <input type="checkbox" id="flagSensitiveInfo" />
+            Flag sensitive information in chats
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" id="dataAnonymization" />
+            Opt for data anonymization for analytics
+          </label>
+        </div>
+
+        <!-- Emergency Contact Options -->
+        <div class="profile-info">
+          <h3>Emergency Contact Options</h3>
+          <button id="designateContacts">Designate Emergency Contacts</button>
+        </div>
+
+        <!-- Save Changes Button -->
+        <div class="save-profile-container">
+          <button class="save-profile-button">
+            <i class="fa fa-save"></i> Save Changes
+          </button>
+        </div>
+      </div>
+      <%- include('partials/navbar') %>
+    </div>
+  </body>
+</html>

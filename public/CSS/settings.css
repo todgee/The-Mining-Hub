@@ -1,0 +1,104 @@
+/* General body styling with background image */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Profile container styling for a mobile look */
+.profile-container {
+    width: 375px;
+    max-width: 100%;
+    height: 667px;
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Lighten background color */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    /* Ensure it stays above the overlay */
+}
+
+/* Profile details box styling */
+.profile-box {
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    max-height: 600px; /* Set a fixed height for the box */
+    overflow-y: auto;  /* Enable vertical scrollbar */
+    display: flex;
+    flex-direction: column; /* Allow flex properties for the inner content */
+}
+
+/* Profile info container styling */
+.profile-info {
+    text-align: left;
+    flex-grow: 1; /* Allow this section to take available space */
+}
+
+.profile-info p,
+.profile-info h3 {
+    margin: 10px 0;
+}
+
+/* Input styling */
+.profile-info input[type="password"],
+.profile-info select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Button Styling */
+.save-profile-container {
+    text-align: center;
+    margin-top: 15px;
+    width: 100%; /* Ensures the container takes full width */
+}
+
+.save-profile-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: calc(100% - 40px); /* Match width with padding */
+    margin-top: 20px; /* Ensure some space from above */
+}
+
+.save-profile-button i {
+    font-size: 18px;
+}
+
+.save-profile-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+

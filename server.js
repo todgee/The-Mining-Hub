@@ -13,6 +13,7 @@ app.set('views', path.join(__dirname, 'views')); // Folder for your EJS template
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); // Add this line to parse JSON requests
 
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,9 +34,15 @@ db.connect((err) => {
     console.log('Connected to MySQL');
 });
 
+// Dummy account for testing
+const dummyAccount = {
+    username: 'testuser',
+    password: 'password123'
+};
+
 // Routes for serving different pages using EJS
 app.get('/', (req, res) => {
-    res.render('home');  // Render home.ejs
+    res.render('login');  // Render login.ejs as the initial page
 });
 
 app.get('/home', (req, res) => {
@@ -56,6 +63,23 @@ app.get('/settings', (req, res) => {
 
 app.get('/profile', (req, res) => {
     res.render('profile');  // Render profile.ejs
+});
+
+app.get('/login', (req, res) => {
+    res.render('login');  // Render login.ejs
+});
+
+// Login route
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    
+    if (username === dummyAccount.username && password === dummyAccount.password) {
+        // Successful login
+        res.json({ success: true });
+    } else {
+        // Failed login
+        res.json({ success: false });
+    }
 });
 
 // Catch-all route for unknown pages

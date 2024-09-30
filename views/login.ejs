@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - The Mining Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/CSS/login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="content">
+        <form id="login-form">
+          <h1>THE MINING HUB</h1>
+          <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="text" id="username" name="username" placeholder="Employee ID or Username" required />
+          </div>
+          <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Password" required />
+          </div>
+          <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember" />
+            <label for="remember">Remember me</label>
+          </div>
+          <button type="submit" class="login-button">
+            <i class="fa fa-sign-in"></i> Login
+          </button>
+        </form>
+        <div class="forgot-password">
+          <a href="#">Forgot Password?</a>
+        </div>
+        <div class="safety-reminder">
+          <i class="fa fa-exclamation-triangle"></i>
+          <p>Remember: Safety First! Always follow mining safety protocols.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+       document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        fetch('/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            window.location.href = '/home';
+          } else {
+            alert('Login failed. Please try again.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+
