@@ -16,7 +16,7 @@
   <body>
     <div class="calendar-container">
       <div class="event-feed-header">
-        <h2>Your Events</h2>
+        <h2>Schedule</h2>
         <button id="add-event-button">Add Event</button>
       </div>
 
@@ -29,21 +29,35 @@
       <div class="event-creation-container" id="event-creation-container">
         <h2>Create New Event</h2>
         <form id="event-form">
-          <label for="event-name">Event Name:</label>
-          <input
-            type="text"
-            id="event-name"
-            name="event-name"
-            placeholder="Event Name"
-            required
-          />
-
-          <label for="event-date">Date:</label>
-          <input type="date" id="event-date" name="event-date" required />
-
+          <label for="event-type">Event Type:</label>
+          <select id="event-type" name="event-type" required>
+            <option value="" disabled selected>Select event type</option>
+            <option value="transport">Transport</option>
+            <option value="processing">Processing</option>
+            <option value="drilling">Drilling</option>
+          </select>
+      
+          <div id="transport-details-container" style="display: none;">
+            <label for="transport-material">Transport Material:</label>
+            <select id="transport-material" name="transport-material">
+              <option value="" disabled selected>Select material</option>
+              <option value="gold">Gold</option>
+              <option value="copper">Copper</option>
+            </select>
+      
+            <label for="transport-quantity">Quantity (tonnes):</label>
+            <input type="number" id="transport-quantity" name="transport-quantity" min="0" step="0.1" placeholder="Enter quantity">
+          </div>
+      
+          <label for="event-start-date">Start Date:</label>
+          <input type="date" id="event-start-date" name="event-start-date" required />
+      
+          <label for="event-end-date">End Date:</label>
+          <input type="date" id="event-end-date" name="event-end-date" required />
+      
           <label for="event-time">Time:</label>
           <input type="time" id="event-time" name="event-time" required />
-
+      
           <label for="event-description">Description:</label>
           <textarea
             id="event-description"
@@ -52,7 +66,7 @@
             rows="3"
             required
           ></textarea>
-
+      
           <button type="submit">Add Event</button>
         </form>
       </div>

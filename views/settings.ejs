@@ -8,18 +8,52 @@
     <link rel="stylesheet" href="/CSS/navbar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/JS/profile.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const designateButton = document.getElementById('designateContacts');
+        const emergencyContactDiv = document.getElementById('emergencyContactDiv');
+        const contactForm = document.getElementById('contactForm');
+        const contactList = document.getElementById('contactList');
+        const saveButton = document.querySelector('.save-profile-button');
+
+        designateButton.addEventListener('click', function() {
+          emergencyContactDiv.style.display = 'block';
+          designateButton.style.display = 'none';
+        });
+
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('contactName').value;
+          const number = document.getElementById('contactNumber').value;
+          
+          const contactItem = document.createElement('div');
+          contactItem.innerHTML = `<strong>${name}:</strong> ${number}`;
+          contactList.appendChild(contactItem);
+
+          document.getElementById('contactName').value = '';
+          document.getElementById('contactNumber').value = '';
+
+          emergencyContactDiv.style.display = 'none';
+          designateButton.style.display = 'block';
+        });
+
+        saveButton.addEventListener('click', function() {
+          alert('Changes saved successfully!');
+        });
+      });
+    </script>
   </head>
   <body>
     <!-- Settings Page Container -->
     <div class="profile-container">
       <!-- Settings Title -->
       <div class="profile-box">
-        <h2>Chatbot Settings</h2>
+        <h1>Settings</h1>
         
         <!-- User Details -->
         <div class="profile-info">
-          <p><strong>Username:</strong> <span id="username">Matteo Frasca</span></p>
-          <p><strong>Email:</strong> <span id="email">matteo@example.com</span></p>
+          <p><strong>Username:</strong> <span id="username">George Blackwood</span></p>
+          <p><strong>Email:</strong> <span id="email">gblackwood@gmail.com</span></p>
           <p><strong>Password:</strong> <input type="password" placeholder="Change Password" /></p>
         </div>
 
@@ -43,56 +77,17 @@
           </div>
         </div>
 
-        <!-- Data Usage Policies -->
-        <div class="profile-info">
-          <h3>Data Usage Policies</h3>
-          <button id="reviewDataUsage">Review Data Usage</button>
-          <p>Compliance with relevant data protection regulations is assured.</p>
-        </div>
-
-        <!-- Data Access Control -->
-        <div class="profile-info">
-          <h3>Data Access Control</h3>
-          <p>Who can access my data:</p>
-          <select>
-            <option value="HR">HR</option>
-            <option value="Management">Management</option>
-            <option value="Only Me">Only Me</option>
-          </select>
-        </div>
-
-        <!-- Chat History Management -->
-        <div class="profile-info">
-          <h3>Chat History Management</h3>
-          <label>
-            <input type="checkbox" id="archiveChatHistory" />
-            Archive chat history for reference
-          </label>
-          <br />
-          <label>
-            <input type="checkbox" id="clearChatHistory" />
-            Clear chat history permanently
-          </label>
-        </div>
-
-        <!-- Sensitive Data Handling -->
-        <div class="profile-info">
-          <h3>Sensitive Data Handling</h3>
-          <label>
-            <input type="checkbox" id="flagSensitiveInfo" />
-            Flag sensitive information in chats
-          </label>
-          <br />
-          <label>
-            <input type="checkbox" id="dataAnonymization" />
-            Opt for data anonymization for analytics
-          </label>
-        </div>
-
-        <!-- Emergency Contact Options -->
         <div class="profile-info">
           <h3>Emergency Contact Options</h3>
           <button id="designateContacts">Designate Emergency Contacts</button>
+          <div id="emergencyContactDiv" style="display: none;">
+            <form id="contactForm">
+              <input type="text" id="contactName" placeholder="Contact Name" required>
+              <input type="tel" id="contactNumber" placeholder="Contact Number" required>
+              <button type="submit">Add Contact</button>
+            </form>
+          </div>
+          <div id="contactList"></div>
         </div>
 
         <!-- Save Changes Button -->

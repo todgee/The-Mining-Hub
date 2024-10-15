@@ -36,8 +36,8 @@ db.connect((err) => {
 
 // Dummy account for testing
 const dummyAccount = {
-    username: 'testuser',
-    password: 'password123'
+    username: 'GBlackwood',
+    password: 'password'
 };
 
 // Routes for serving different pages using EJS

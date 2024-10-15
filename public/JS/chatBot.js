@@ -68,7 +68,7 @@ function handleInput(event) {
 window.onload = function() {
     // Display the initial message from Buddy
     const chatBox = document.getElementById("chat-box");
-    const botMessage = "Hi, my name is Buddy! How can I help you today?";
+    const botMessage = "Hi George, my name is Buddy! How can I help you today?";
     
     // Create the bot message element
     const botMessageElement = document.createElement("div");

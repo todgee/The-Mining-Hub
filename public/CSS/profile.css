@@ -49,6 +49,11 @@ body {
     margin-bottom: 15px;
 }
 
+.profile-box h1 {
+    color: #FF5722; /* Orange color matching the nav bar */
+    margin-bottom: 20px;
+}
+
 .profile-picture {
     width: 100px;
     height: 100px;
