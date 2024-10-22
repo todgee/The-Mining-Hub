@@ -1,5 +1,4 @@
 const express = require('express');
-const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
@@ -17,22 +16,6 @@ app.use(bodyParser.json()); // Add this line to parse JSON requests
 
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
-
-// MySQL database connection
-const db = mysql.createConnection({
-    host: '172.26.96.1',
-    user: 'test',
-    password: 'test',
-    database: 'event_scheduler'
-});
-
-db.connect((err) => {
-    if (err) {
-        console.error('Error connecting to MySQL:', err);
-        return;
-    }
-    console.log('Connected to MySQL');
-});
 
 // Dummy account for testing
 const dummyAccount = {
